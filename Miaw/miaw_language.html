@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Messaging for In app and web on external sites</title>
+   
+</head>
+
+<body>
+	<p>Helllo World. <br> Testing Messaging for In app and Web on this domain.<br>
+	Created Messaging Channel.<br>
+	Created Embedded Service Deployment.<br>
+	Created Omni-Channel Flow for routing. <br>
+	On netlify. Prechat with custom LWCs.
+	
+	</p>
+	<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			const params = new URLSearchParams(
+				window.location.search
+			);
+			let varLang = 
+				params.has( 'language' ) ?
+				params.get( 'language' ) : 
+				'en_US';
+			console.log(
+				'Language is',
+				varLang
+			);
+			embeddedservice_bootstrap.settings.language = varLang;
+			//embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D7Q000008O3Z2',
+				'ESD_MiawL3_PreChatWithCustomComponents',
+				'https://junesoftware-3f-dev-ed.my.site.com/ESWESDMiawL3PreChatWith1721727373401',
+				{
+					scrt2URL: 'https://junesoftware-3f-dev-ed.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://junesoftware-3f-dev-ed.my.site.com/ESWESDMiawL3PreChatWith1721727373401/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
+  
+</body>
+
+</html>
